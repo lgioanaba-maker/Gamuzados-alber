@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gamuzados Alber | Figuras Navideñas al por Mayor en Bello</title>
+
+<style>
+
+
+  body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color:#0f2b24;
+  color:white;
+  text-align:center;
+}
+
+header{
+  padding:80px 20px;
+}
+
+h1, h2{
+  color:#d4af37;
+}
+
+.btn{
+  padding:15px 30px;
+  margin:10px;
+  border:none;
+  cursor:pointer;
+  border-radius:30px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.whatsapp{
+  background:#25D366;
+  color:white;
+}
+
+.llamar{
+  background:#d4af37;
+  color:black;
+}
+
+.beneficios{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.beneficios div{
+  width:250px;
+  margin:15px;
+  padding:20px;
+  border:1px solid #d4af37;
+  border-radius:15px;
+}
+
+.carousel{
+  position:relative;
+  max-width:800px;
+  margin:auto;
+  overflow:hidden;
+}
+
+.slides{
+  display:flex;
+  
+  transition:0.5s;
+}
+
+.slides img{
+  width:100%;
+  border-radius:15px;
+}
+
+.prev, .next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#d4af37;
+  border:none;
+  padding:10px;
+  cursor:pointer;
+  border-radius:50%;
+}
+
+.prev{ left:10px; }
+.next{ right:10px; }
+
+.flotante{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px 20px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+
+
+
+/* GALERÍA */
+
+.galeria{
+
+  padding:80px 20px;
+
+  background:#0f2b24;
+
+  text-align:center;
+
+}
+
+.galeria h2{
+
+  color:#d4af37;
+
+  margin-bottom:40px;
+
+}
+
+
+.galeria {
+
+  display: grid;
+
+  grid-template: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 20px;
+
+  padding: 40px;
+
+}
+
+.galeria img {
+
+  width: 100%;
+
+  height: 250px;          /* 🔥 Altura fija */
+
+  object-fit: cover;      /* 🔥 Recorta sin deformar */
+
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+
+}
+
+.galeria img:hover {
+
+  transform: scale(1.05);
+
+}
+  
+
+}
+
+/* Animación aparición */
+
+@keyframes aparecer{
+
+  to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+  }
+
+}
+
+/* MODAL */
+
+.modal{
+
+  display:none;
+
+  position:fixed;
+
+  top:0;
+
+  left:0;
+
+  width:100%;
+
+  height:100%;
+
+  background:rgba(0,0,0,0.9);
+
+  justify-content:center;
+  
+
+  align-items:center;
+
+  z-index:999;
+
+}
+
+.modal img{
+
+  max-width:90%;
+
+  max-height:90%;
+
+  border-radius:20px;
+
+  border:3px solid #d4af37;
+
+}
+
+.modal {
+
+  display: none;
+
+  position: fixed;
+
+  z-index: 999;
+
+  padding-top: 50px;
+
+  left: 0;
+
+  top: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background-color: rgba(0,0,0,0.9);
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+.modal img {
+
+  max-width: 90%;
+
+  max-height: 80%;
+
+  border-radius: 20px;
+
+}
+
+.cerrar {
+
+  position: absolute;
+
+  top: 20px;
+
+  right: 35px;
+
+  font-size: 40px;
+  color: white;
+
+  cursor: pointer;
+
+}
+</style>
+</head>
+<body>
+
+
+
+
+<header>
+
+  <h1>Figuras Navideñas Artesanales para Mayoristas</h1>
+
+  <p>Alta rotación | Excelente margen | Envíos nacionales</p>
+
+  <a href="https://wa.me/573044251825" target="_blank">
+
+    <button class="btn whatsapp">Solicitar Catálogo</button>
+
+  </a>
+
+
+</header>
+
+<section>
+
+  <h2>Oportunidad para Distribuidores</h2>
+
+  <p>Desde Bello - Antioquia enviamos a todo Colombia.  
+
+  Ventas exclusivamente al por mayor.</p>
+
+</section>
+
+<section class="beneficios">
+
+  <div>Alta demanda en temporada</div>
+
+  <div>Excelente rentabilidad</div>
+<div>Diseños exclusivos</div>
+
+  <div>Producción artesanal</div>
+
+</section>
+
+<section class="galeria">
+
+  <h2>Nuestros Productos</h2>
+
+  <div class="grid-galeria">
+
+    <img src="  https://i.postimg.cc/htZj8Dsb/IMG_20260224_WA0011.jpg " alt="Producto 1" onclick="abrirModal(this.src)">
+
+    <img src=" https://i.postimg.cc/vZKYgP8h/IMG_20260224_WA0005.jpg " alt="Producto 2" onclick="abrirModal(this.src)">
+
+    <img src="  https://i.postimg.cc/52X1Vw5y/IMG_20260224_WA0014.jpg   " alt="Producto 3" onclick="abrirModal(this.src)">
+
+    <img src="  https://i.postimg.cc/7Zj4YfXN/IMG_20260224_WA0017.jpg " alt="Producto 4" onclick="abrirModal(this.src)">
+
+  </div>
+
+</section>
+
+
+<!-- Modal -->
+
+<div id="modal" class="modal" onclick="cerrarModal()">
+
+  <img id="imagenModal">
+
+</div>
+
+<footer>
+
+  <p>Gamuzados Alber | Bello - Antioquia</p>
+
+  <p>WhatsApp: 304 425 1825</p>
+
+</footer>
+
+<a class="flotante" href="https://wa.me/573044251825" target="_blank">
+
+  📲 haz tu pedido
+
+</a>
+
+<script>
+let index = 0;
+
+const slides = document.getElementById('slide');
+
+function showSlide(){
+
+  slides.style.transform = `translateX(-${index * 100}%)`;
+
+}
+
+function moveSlide(step){
+
+  const total = slides.children.length;
+
+  index += step;
+
+  if(index >= total) index = 0;
+
+  if(index < 0) index = total -1;
+
+  showSlide();
+
+}
+
+setInterval(() => {
+
+  const total = slides.children.length;
+
+  index++;
+
+  if(index >= total) index = 0;
+
+  showSlide();
+
+}, 3000);
+
+function abrirModal(src){
+
+  document.getElementById("modal").style.display = "flex";
+
+  document.getElementById("imagenModal").src = src;
+
+}
+
+function cerrarModal(){
+
+  document.getElementById("modal").style.display = "none";
+
+}
+</script>
+</body>
+</html>
+
+
+
+
+
